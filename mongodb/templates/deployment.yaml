@@ -7,23 +7,23 @@ metadata:
   labels:
     project: roboshop
     tier: db
-    component: frontend
+    component: mongodb
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
     # using these labels replica set selects the pod
     matchLabels:
-        project: roboshop
-        tier: db
-        component: frontend
+      project: roboshop
+      tier: db
+      component: mongodb
   # This is pod definition, pod is subset of replicaset
   template:
     metadata:
       labels:
         project: roboshop
         tier: db
-        component: frontend
+        component: mongodb
     spec:
       containers:
       - name: mongodb
-        image: "{{ .Values.deployment.imageName }}/{{ .Values.deployment.imageVersion }}"
+        image: "{{ .Values.deployment.imageName }}:{{ .Values.deployment.imageVersion }}"
