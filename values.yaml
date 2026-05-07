@@ -1,0 +1,4 @@
+deployment:
+  replicas: "1"
+  imageName: "mooulali22/mongodb"
+  imageVersion: "1.0.0"
